@@ -26,17 +26,17 @@ public class CustomerController {
 	
 	@Autowired
 	private CustomerService c;
-	@GetMapping("/customerservicedb")
+	@GetMapping("/customerservice")
 	public List<Customer> list(){
 		return c.listAll();
 	}
 	
-	@PostMapping("/customerservicedb")
+	@PostMapping("/customerservice")
 	public void add(@RequestBody Customer c1) {
 		c.save(c1);
 	}
 	
-	@GetMapping("/customerservicedb/{id}")
+	@GetMapping("/customerservice/{id}")
 	public ResponseEntity<Customer> get(@PathVariable Integer id){
 		try {
 			Customer c2 = c.get(id);
@@ -46,7 +46,7 @@ public class CustomerController {
 		}
 	}
 	
-	@DeleteMapping("/customerservicedb/{id}")
+	@DeleteMapping("/customerservice/{id}")
 	public void delete(@PathVariable Integer id) {
 		c.delete(id);
 	}
